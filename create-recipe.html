@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Sign in</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<a class="navbar-brand" href="#">MyRecipe</a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <div class="col-md-4 col-md-offset-4" style="margin-top: 10%">
+      <h1 class="text-center">Add a Recipe</h1>
+      <div class="panel panel-default" style="padding: 5%;">
+          <form action="/signin.php" >
+            <div class="form-group">
+              <label for="email">Email address:</label>
+              <input type="text" class="form-control" id="name" name="name">
+            </div>
+            
+            <div class="form-group">
+              <label for="decription">Description</label>
+              <input type="text" class="form-control" id="description" name="description">
+            </div>
+
+            <div class="form-group">
+              <label for="instructions">Instructions</label>
+              <textarea type="text" class="form-control" id="instructions" name="instructions"></textarea>
+            </div>
+            <input type="file" class="form-control" name="img_url">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+      </div>
+        
+    </div>
+  </div>
+</body>
+</html>
