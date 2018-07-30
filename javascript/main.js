@@ -35,4 +35,3 @@ function signUp() {
     alert('Unable to sign up, try again');
   });
 }
-signUp();
