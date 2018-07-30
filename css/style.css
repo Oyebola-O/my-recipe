@@ -17,17 +17,21 @@ body, html {
 
 
 #list_page {
+  height: 80%;
+  padding-left: 50px;
+  padding-top: 50px;
   overflow: scroll;
   display: grid;
-  grid-gap: 30px;
-  padding: 50px;
-  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  overflow: scroll;
+  grid-template-columns: auto auto auto auto;
 }
 
 .card {
   width: 250px;
   height: 250px;
   text-align: center;
+  margin: 10px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   background: darkgrey;
   transition-duration: 0.3s;
