@@ -6,8 +6,8 @@ function signIn(user) {
 
   loginInfo = {
     user: {
-      email: 'tmorolari@gmail.com',
-      password: 'password'
+      email: email.value,
+      password: password.value
     }
   };
   let fetchData = {
