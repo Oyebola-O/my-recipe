@@ -38,7 +38,8 @@ function signUp() {
   });
 }
 
-function signIn(user) {
+function signIn(event) {
+  event.preventDefault();
   const email = document.getElementById('email');
   const password = document.getElementById('password');
 
@@ -62,14 +63,12 @@ function signIn(user) {
       console.log(data);
       if (typeof(Storage) !== "undefined") {
         localStorage.token = data.token;
-        location.replace('page.html');
+        // location.replace('page.html');
+        console.log(data.token);
       }
     }).catch((err) => {
-    console.log('')
+    console.log(err)
   });
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  signIn();
-});
+document.querySelector('.signin').addEventListener('click', signIn, false);
