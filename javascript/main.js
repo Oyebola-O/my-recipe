@@ -1,5 +1,7 @@
+base_url = 'https://more-recipes.herokuapp.com/api/v1';
 function signUp() {
-  const url = 'https://more-recipes.herokuapp.com/api/v1/users/signup';
+    // @author James Eneh
+  const url = `${base_url}/users/signup`;
   let data = {
     user: {
       fullname: "James Eneh",
@@ -35,3 +37,39 @@ function signUp() {
     alert('Unable to sign up, try again');
   });
 }
+
+function signIn(user) {
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+
+  loginInfo = {
+    user: {
+      email: email.value,
+      password: password.value
+    }
+  };
+  let fetchData = {
+    method: 'POST',
+    body: JSON.stringify(loginInfo),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+  };
+  const url = `${base_url}/users/login`;
+  fetch(url, fetchData)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      if (typeof(Storage) !== "undefined") {
+        localStorage.token = data.token;
+        location.replace('page.html');
+      }
+    }).catch((err) => {
+    console.log('')
+  });
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  signIn();
+});
